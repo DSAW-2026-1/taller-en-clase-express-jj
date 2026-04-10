@@ -56,6 +56,8 @@ app.get('/request', verifyToken, (req, res) => {
     return res.status(401).json({ message: "You're not allowed to do this" });
 });
 
-app.listen(3000, () => {
-    console.log('Servidor corriendo en http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en puerto ${PORT}`);
 });
